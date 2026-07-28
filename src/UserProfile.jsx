@@ -1,7 +1,7 @@
-function UserProfile() {
-  const name = "Michiyo Kawamura";
-  const bio = "Frontend developer who loves hiking and matcha lattes.";
-  const photoUrl = "https://images.unsplash.com/photo-1542833807-ad5af0977050?q=80&w=2236&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+import { useState } from "react";
+
+function UserProfile({ name, bio, photoUrl }) {
+  const [isHovered, setIsHovered] = useState(false);
 
   const containerStyle = {
     display: "flex",
@@ -12,7 +12,7 @@ function UserProfile() {
     margin: "80px auto",
     padding: "24px",
     textAlign: "center",
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "'Poppins', sans-serif",
   };
 
   const imageStyle = {
@@ -21,22 +21,32 @@ function UserProfile() {
     borderRadius: "50%",
     objectFit: "cover",
     marginBottom: "16px",
+    transform: isHovered ? "scale(1.2)" : "scale(1)",
+    transition: "transform 0.2s ease",
   };
 
   const nameStyle = {
     fontSize: "24px",
+    fontWeight: "bold",
+    color: "#FFB3DE",
     margin: "0 0 8px 0",
   };
 
   const bioStyle = {
     fontSize: "16px",
-    color: "#555",
+    color: "#E8DDD2",
     lineHeight: "1.4",
   };
 
   return (
     <div style={containerStyle}>
-      <img src={photoUrl} alt={name} style={imageStyle} />
+      <img
+        src={photoUrl}
+        alt={name}
+        style={imageStyle}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      />
       <h1 style={nameStyle}>{name}</h1>
       <p style={bioStyle}>{bio}</p>
     </div>
