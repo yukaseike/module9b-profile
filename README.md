@@ -17,4 +17,4 @@ I also hit a connection refused error when trying to view the app in the browser
 For styling, getting the profile photo to crop into a clean circle took some adjusting. Just setting borderRadius: "50%" wasn't enough on its own, the image would stretch. Adding objectFit: "cover" fixed it by cropping the image to fill the circle properly instead of squishing it.
 
 ## Screenshot
-[Add screenshot here]
+<img width="1728" height="1043" alt="Screenshot 2026-07-27 at 8 43 01 PM" src="https://github.com/user-attachments/assets/7bcb28b5-589c-4ecf-a6cc-f55a33998404" />
